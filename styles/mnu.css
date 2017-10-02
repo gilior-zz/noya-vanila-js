@@ -1,5 +1,7 @@
 .mnu-wrp {
   height: 100vh;
-  border: solid; }
+  background-image: url("http://res.cloudinary.com/lior/image/upload/v1468953847/home_pic.jpg");
+  background-size: cover;
+  background-size: 100% 100%; }
 
 /*# sourceMappingURL=mnu.css.map */
