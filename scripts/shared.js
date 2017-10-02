@@ -5,32 +5,44 @@
         });
     })
 }())
-var PUBLIC_API = function () {
-    var obj = {};
-    loadData = function (url, body) {
-        var data = JSON.parse(body);
-        return $.ajax({
-            url: 'http://api.joind.in/v2.1/talks/10889',
-            data: data,
+var PUBLIC_API =  {
+
+    loadData :function (url, body) {
+        var data=JSON.stringify(body);
+        var settings = {
+            "async": true,
+            "crossDomain": true,
+            "url":url,
             error: function (err) {
                 throw  err;
             },
-            dataType: 'json',
+            "method": "POST",
+            "headers": {
+                "content-type": "application/json",
+                "cache-control": "no-cache",
+                "postman-token": "ab7054de-e5c0-db38-4fb1-1de548a424a2"
+            },
             success: function (data) {
                 return data;
             },
-            type: 'POST'
-        });
-    }
-    obj.getData = function (url, body) {
-      return  this.load(url, body).then(function (data) {
+            "processData": false,
+            "data": data
+        }
+        return    $.ajax(settings)
+
+
+
+
+    },
+    getData :function (url, body) {
+      return  this.loadData(url, body).then(function (data) {
           return data;
       }).catch(function (err) {
           console.log(err);
           return err;
       })
     }
-    return obj;
+
 }
 
 
