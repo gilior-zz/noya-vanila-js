@@ -38,6 +38,7 @@
     vertical-align: middle; }
   .item-content--toggle-state {
     position: absolute;
+
     z-index: 1;
     cursor: pointer; }
     .item-content--toggle-state--img {

@@ -42,31 +42,38 @@
             }
             domManager.addElementToDom(index, 'div', data, c);
 
-            function fb() {
 
-                $(this).fadeOut();
-                $('#' + g).fadeIn();
-
+            var closeImgHandler = {
+                func: function fb() {
+                    $(this).css('visibility', 'hidden')
+                    $('#' + f).fadeIn();
+                },
+                event: 'click'
             }
+
 
             var e = 'close-btn-' + index;
             var data = {
                 id: e,
                 class: 'item-content--toggle-state',
                 src: 'assets/close.ico',
-                css:{
-                    display:'none'
+                css: {
+                    visibility: 'hidden'
                 }
 
             }
-            domManager.addElementToDom(index, 'img', data, d,'click',fb);
+            domManager.addElementToDom(index, 'img', data, d, closeImgHandler.event, closeImgHandler.func);
 
 
-            function fa() {
+            var imgHandler = {
+                func: function fa() {
 
-                $(this).fadeOut();
-                $('#' + h).fadeIn();
+                    $(this).fadeOut();
+                    $('#' + h).fadeIn();
+                    $('#' + e).css('visibility', 'visible')
 
+                },
+                event: 'click'
             }
 
 
@@ -76,9 +83,7 @@
                 class: 'item-content--img',
                 src: image_Url
             }
-            domManager.addElementToDom(index, 'img', data, d, 'click', fa);
-
-
+            domManager.addElementToDom(index, 'img', data, d, imgHandler.event, imgHandler.func);
 
 
             var g = 'item-content-state-' + index;
@@ -101,7 +106,7 @@
 
         }
 
-        obj.getData('http://noyaschleien.com/api/Data/GetTraverseItems', {"request": {"Language": "1"}}).then(function (data) {
+        obj.getData('cards', 'http://noyaschleien.com/api/Data/GetTraverseItems', {"request": {"Language": "1"}}).then(function (data) {
             console.log(data);
             for (var i = 0; i < data.TraverseItems.length; i++) {
                 var card = data.TraverseItems[i];

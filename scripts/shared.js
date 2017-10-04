@@ -6,7 +6,15 @@
     })
 }())
 var PUBLIC_API = {
+    updateCache: function (key, value) {
+        localStorage.setItem(key,JSON.stringify(value) );
+    },
 
+    getFromCache: function (key) {
+        var item = localStorage.getItem(key);
+        if (typeof item !== "undefined" && item !== null && item !== '')
+            return JSON.parse(item);
+    },
     loadData: function (url, body) {
         var data = JSON.stringify(body);
         var settings = {
@@ -29,14 +37,21 @@ var PUBLIC_API = {
         }
         return $.ajax(settings)
     },
-    getData: function (url, body) {
-        return this.loadData(url, body).then(function (data) {
+    getData: function (name, url, body) {
+        var me=this;
+        var fromCache = this.getFromCache(name);
+        if (typeof fromCache !== "undefined" && typeof fromCache !== null) return Promise.resolve(fromCache) ;
+        return me.loadData(url, body).then(function (data) {
+            console.log(this);
+            console.log(me);
+            me.updateCache(name, data);
             return data;
         }).catch(function (err) {
             console.log(err);
             return err;
         })
-    }
+    },
+
 
 }
 
