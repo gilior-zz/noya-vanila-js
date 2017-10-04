@@ -46,6 +46,7 @@
             var closeImgHandler = {
                 func: function fb() {
                     $(this).css('visibility', 'hidden')
+
                     $('#' + f).fadeIn();
                 },
                 event: 'click'
