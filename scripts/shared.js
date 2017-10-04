@@ -5,6 +5,8 @@
         });
     })
 }())
+
+
 var PUBLIC_API = {
     updateCache: function (key, value) {
         localStorage.setItem(key,JSON.stringify(value) );
