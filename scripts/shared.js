@@ -9,7 +9,7 @@
 
 var PUBLIC_API = {
     updateCache: function (key, value) {
-        localStorage.setItem(key,JSON.stringify(value) );
+        localStorage.setItem(key, JSON.stringify(value));
     },
 
     getFromCache: function (key) {
@@ -40,9 +40,9 @@ var PUBLIC_API = {
         return $.ajax(settings)
     },
     getData: function (name, url, body) {
-        var me=this;
+        var me = this;
         var fromCache = this.getFromCache(name);
-        if (typeof fromCache !== "undefined" && typeof fromCache !== null) return Promise.resolve(fromCache) ;
+        if (typeof fromCache !== "undefined" && typeof fromCache !== null) return Promise.resolve(fromCache);
         return me.loadData(url, body).then(function (data) {
             console.log(this);
             console.log(me);
@@ -65,6 +65,11 @@ var DomManager = {
         if (typeof event !== "undefined" && typeof func !== "undefined")
             elem.on(event, func);
 
+    },
+
+    addHtmlToElemet: function (html, where) {
+        var finalWhere = '#' + where;
+        $(finalWhere).html(html);
     }
 }
 
