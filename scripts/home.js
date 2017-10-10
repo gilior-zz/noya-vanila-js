@@ -108,7 +108,7 @@
 
     $(document).ready(function () {
 
-        obj.getData('cards', 'http://noyaschleien.com/api/Data/GetTraverseItems', {"request": {"Language": "1"}}).then(function (data) {
+        obj.getData('cards', 'http://noyaschleien.com/api/Data/GetTraverseItems', {"request": {"Language": "0"}}).then(function (data) {
             console.log(data);
             for (var i = 0; i < data.TraverseItems.length; i++) {
                 var card = data.TraverseItems[i];
@@ -119,7 +119,7 @@
 
         });
 
-        obj.getData('homeText', 'http://noyaschleien.com/api/Data/GetHomePageText', {"request": {"Language": "1"}}).then(function (data) {
+        obj.getData('homeText', 'http://noyaschleien.com/api/Data/GetHomePageText', {"request": {"Language": "0"}}).then(function (data) {
             console.log(data.HomePageTexts[0]);
             var domManager = Object.create(DomManager);
             domManager.addHtmlToElemet(data.HomePageTexts[0].Text,'home-text-place-holder')
