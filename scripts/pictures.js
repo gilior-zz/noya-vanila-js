@@ -12,6 +12,10 @@
         domManager.addElementToDom(1, 'div', divData, 'pictures-place-holder')
 
 
+        function imgClick() {
+            $('.item.active').removeClass('active');
+            $('#crl-wrp-id-'+this.id).addClass('active')
+        }
 
         var imgData = {
             id: img.ID,
@@ -20,7 +24,10 @@
             'data-target': '#myModal',
             src: img.ImageURL
         }
-        domManager.addElementToDom(1, 'img', imgData, wrpID);
+        domManager.addElementToDom(1, 'img', imgData, wrpID,'click',imgClick);
+
+
+
 
 
 
@@ -31,14 +38,14 @@
         //set carousel
         var crlWrpID='crl-wrp-id-'+img.ID;
         var crlWrpData={
-            class:'item active',
+            class:'item',
             id:crlWrpID
         }
         domManager.addElementToDom(1,'div',crlWrpData,'carousel-place-holder')
 
 
         var crlImgData = {
-            id: 'crlImgData '+img.ID,
+            id:img.ID,
             class: 'img-carousel img-responsive img-rounded',
 
             src: img.ImageURL
@@ -51,6 +58,7 @@
             id:crlTitleID
         }
         domManager.addElementToDom(1,'div',crlTitlwData,crlWrpID)
+
     }
 
     $(document).ready(function () {
