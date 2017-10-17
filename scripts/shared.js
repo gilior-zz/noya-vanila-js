@@ -26,7 +26,7 @@ var PUBLIC_API = {
             error: function (err) {
                 throw  err;
             },
-            "method": "POST",
+            "method": "GET",
             "headers": {
                 "content-type": "application/json",
                 "cache-control": "no-cache",
