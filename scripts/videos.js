@@ -4,10 +4,10 @@
 
     function processVideo(video) {
         console.log(video);
-        var src = 'https://www.youtube.com/embed/' + video.videoId + '' +
+        var src = 'https://www.youtube.com/embed/' + video['snippet']['resourceId']['videoId'] + '' +
             '?showinfo=1' +
             '&rel=0&modestbranding=1' +
-            '&hl=eng';
+            '&hl=he';
 
         var divID='div-'+video.id;
         var divData={
