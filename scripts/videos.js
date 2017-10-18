@@ -4,10 +4,30 @@
 
     function processVideo(video) {
         console.log(video);
+        var src = 'https://www.youtube.com/embed/' + video.videoId + '' +
+            '?showinfo=1' +
+            '&rel=0&modestbranding=1' +
+            '&hl=eng';
+
+        var divID='div-'+video.id;
+        var divData={
+            class:'col-xs-12 col-md-6',
+            id:divID
+        }
+
+        domManager.addElementToDom(1,'div',divData,'videos-place-holder')
+
+        var frameData={
+            width:"100%",
+            height:"300",
+            allowfullscreen:true,
+            src:src
+        }
+
+        domManager.addElementToDom(1,'iframe',frameData,divID)
     }
 
     $(document).ready(function () {
-
 
 
         api.getData('videos', 'https://www.googleapis.com/youtube/v3/playlistItems?' +
@@ -15,7 +35,7 @@
             '&playlistId=UUO2Xi-wHrqM27neDaVrfebQ' +
             '&maxResults=50' +
             '&key=AIzaSyBH2ltO-MFMiW7dftsCCM3w8F86M-kwDHM&').then(function (data) {
-            
+
             for (var i = 0; i < data['items'].length; i++) {
                 var obj = data['items'][i];
                 processVideo(obj)
