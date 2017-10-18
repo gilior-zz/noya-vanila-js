@@ -17,7 +17,9 @@ var PUBLIC_API = {
         if (typeof item !== "undefined" && item !== null && item !== '')
             return JSON.parse(item);
     },
-    loadData: function (url, body) {
+    loadData: function (url, body,method) {
+        if (typeof method !== 'undefined')
+            method='POST';
         var data = JSON.stringify(body);
         var settings = {
             "async": true,
@@ -26,7 +28,7 @@ var PUBLIC_API = {
             error: function (err) {
                 throw  err;
             },
-            "method": "GET",
+            "method": method,
             "headers": {
                 "content-type": "application/json",
                 "cache-control": "no-cache",
@@ -39,11 +41,11 @@ var PUBLIC_API = {
         }
         return $.ajax(settings)
     },
-    getData: function (name, url, body) {
+    getData: function (name, url, body,method) {
         var me = this;
         var fromCache = this.getFromCache(name);
         if (typeof fromCache !== "undefined" && typeof fromCache !== null) return Promise.resolve(fromCache);
-        return me.loadData(url, body).then(function (data) {
+        return me.loadData(url, body,method).then(function (data) {
             console.log(this);
             console.log(me);
             me.updateCache(name, data);

@@ -2,9 +2,8 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>videos</title>
-    <meta charset="UTF-8">
-    <title>videos</title>
+    <title>programs</title>
+    <title>pictures</title>
     <script
             src="https://code.jquery.com/jquery-3.2.1.min.js"
             integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
@@ -25,21 +24,20 @@
     <link rel="stylesheet" href="styles/shared.css">
     <link href="https://fonts.googleapis.com/css?family=Rubik&amp;subset=hebrew" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bluebird/3.3.5/bluebird.min.js"></script>
-    <script src="scripts/videos.js"></script>
-    <link rel="stylesheet" href="styles/videos.css">
+    <script src="scripts/programs.js"></script>
+    <link rel="stylesheet" href="styles/programs.css">
 </head>
 <body>
-
 <div class="container-fluid">
     <div id="mnu-place-holder"></div>
 
-    <div class="row" id="videos-place-holder">
-
+    <div class="row">
+        <div class="col-xs-12" id="programs-place-holder">
+            <div *ngFor="let prg of programs" class="row program-item white-panel padding-5 back-cornsilk-color"
+                 [innerHTML]="prg.Text|safeResource:0">
+            </div>
+        </div>
     </div>
-</div>
-
-
-
 
 
 </div>
