@@ -18,7 +18,7 @@ var PUBLIC_API = {
             return JSON.parse(item);
     },
     loadData: function (url, body,method) {
-        if (typeof method !== 'undefined')
+        if (typeof method === 'undefined')
             method='POST';
         var data = JSON.stringify(body);
         var settings = {
