@@ -22,7 +22,7 @@
     }
 
     $(document).ready(function () {
-        api.getData('links', 'http://noyaschleien.com/api/Data/GetLinks', {"request": {"Language": '0'}}).then(function (data) {
+        api.getData('links', 'http://noyaschleien.com/api/Data/GetLinks', {"request": {"Language": '1'}}).then(function (data) {
             for (var i = 0; i < data['Links'].length; i++) {
                 var obj = data['Links'][i];
                 processLink(obj);

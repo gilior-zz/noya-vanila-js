@@ -1,3 +1,3 @@
-var FORM_HANDLER(function () {
+var FORM_HANDLER = (function () {
 
 }())

@@ -34,7 +34,7 @@
             'part=snippet' +
             '&playlistId=UUO2Xi-wHrqM27neDaVrfebQ' +
             '&maxResults=50' +
-            '&key=AIzaSyBH2ltO-MFMiW7dftsCCM3w8F86M-kwDHM&','GET').then(function (data) {
+            '&key=AIzaSyBH2ltO-MFMiW7dftsCCM3w8F86M-kwDHM&',{},'GET').then(function (data) {
 
             for (var i = 0; i < data['items'].length; i++) {
                 var obj = data['items'][i];

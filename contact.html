@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>contact</title>
+    <link rel="icon" type="image/x-icon" href="http://res.cloudinary.com/lior/image/upload/v1508510259/favicon_uuzptm.png">
     <script
             src="https://code.jquery.com/jquery-3.2.1.min.js"
             integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
@@ -34,63 +35,66 @@
 <div class="container-fluid">
     <div id="mnu-place-holder"></div>
 
-    <form action="">
-        <div class="row">
-            <div class="col-md-6  col-md-push-3  col-xs-12 box">
-                <div class="row">
-                    <div class="col-md-6  col-md-push-3  col-xs-12">
-                        <label for="name">name</label>
-                        <input required type="text" class="form-control" id="name" name="name"
-                               aria-describedby="emailHelp"
-                               placeholder="Enter name">
+    <div class="contact-wrp">
+        <form action="">
+            <div class="row">
+                <div class="col-md-6  col-md-push-3  col-xs-12 box">
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <label for="name">name</label>
+                            <input required type="text" class="form-control" id="name" name="name"
+                                   aria-describedby="emailHelp"
+                                   placeholder="Enter name">
+                        </div>
+                    </div>
+                    <div class="row">
+
+                        <div class=" col-xs-12">
+                            <label for="exampleInputEmail1">Email address</label>
+                            <input required type="email" class="form-control" id="exampleInputEmail1"
+                                   aria-describedby="emailHelp"
+                                   placeholder="Enter email">
+
+                        </div>
+                    </div>
+
+                    <div class="row">
+
+                        <div class="  col-xs-12">
+
+                            <label for="content">content</label>
+                            <textarea required class="form-control" id="content" rows="3" name="content"
+                                      placeholder="Enter content"></textarea>
+                        </div>
+                    </div>
+
+                    <div class="row">
+
+                        <div class="  col-xs-12">
+
+                            <label class="form-check-label">
+                                <input checked type="checkbox" class="form-check-input">
+                                get notifications
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="row">
+
+                        <div class="  col-xs-12">
+                            <button type="submit" class="btn btn-primary">Submit</button>
+
+                        </div>
                     </div>
                 </div>
-                <div class="row">
 
-                    <div class="col-md-6  col-md-push-3  col-xs-12">
-                        <label for="exampleInputEmail1">Email address</label>
-                        <input required type="email" class="form-control" id="exampleInputEmail1"
-                               aria-describedby="emailHelp"
-                               placeholder="Enter email">
 
-                    </div>
-                </div>
-
-                <div class="row">
-
-                    <div class="col-md-6  col-md-push-3  col-xs-12">
-
-                        <label for="content">content</label>
-                        <textarea required class="form-control" id="content" rows="3" name="content"
-                                  placeholder="Enter content"></textarea>
-                    </div>
-                </div>
-
-                <div class="row">
-
-                    <div class="col-md-6  col-md-push-3  col-xs-12">
-
-                        <label class="form-check-label">
-                            <input checked type="checkbox" class="form-check-input">
-                            get notifications
-                        </label>
-                    </div>
-                </div>
-
-                <div class="row">
-
-                    <div class="col-md-6  col-md-push-3  col-xs-12">
-                        <button type="submit" class="btn btn-primary">Submit</button>
-
-                    </div>
-                </div>
             </div>
 
 
-        </div>
+        </form>
+    </div>
 
-
-    </form>
 
 </div>
 

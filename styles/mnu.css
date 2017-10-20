@@ -1,4 +1,5 @@
 .mnu-wrp {
+  margin-bottom: 50px;
   height: 100vh;
   background-image: url("http://res.cloudinary.com/lior/image/upload/e_colorize:44,q_auto:eco/v1432464310/header/home_pic.jpg");
   background-size: cover;

@@ -1,7 +1,7 @@
 {
 "version": 3,
-"mappings": "",
-"sources": [],
+"mappings": "AACE,wBAAI;EACF,OAAO,EAAE,IAAI",
+"sources": ["videos.scss"],
 "names": [],
 "file": "videos.css"
 }

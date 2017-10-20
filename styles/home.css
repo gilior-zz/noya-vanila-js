@@ -45,6 +45,9 @@
       position: absolute;
       top: -350px; }
 
+#home-text-place-holder p {
+  direction: ltr !important; }
+
 .item-wrp {
   border-radius: 5px;
   margin-top: 30px; }
