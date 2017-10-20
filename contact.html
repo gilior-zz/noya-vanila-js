@@ -25,6 +25,9 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bluebird/3.3.5/bluebird.min.js"></script>
     <script src="scripts/contact.js"></script>
     <link rel="stylesheet" href="styles/contact.css">
+    <!--<link rel="stylesheet" href="bootstrap.css">-->
+
+
 </head>
 <body>
 
@@ -32,33 +35,61 @@
     <div id="mnu-place-holder"></div>
 
     <form action="">
+        <div class="row">
+            <div class="col-md-6  col-md-push-3  col-xs-12 box">
+                <div class="row">
+                    <div class="col-md-6  col-md-push-3  col-xs-12">
+                        <label for="name">name</label>
+                        <input required type="text" class="form-control" id="name" name="name"
+                               aria-describedby="emailHelp"
+                               placeholder="Enter name">
+                    </div>
+                </div>
+                <div class="row">
 
-        <div class="form-group">
-            <label for="name">name</label>
-            <input type="text" class="form-control" id="name" name="name" aria-describedby="emailHelp" placeholder="Enter email">
+                    <div class="col-md-6  col-md-push-3  col-xs-12">
+                        <label for="exampleInputEmail1">Email address</label>
+                        <input required type="email" class="form-control" id="exampleInputEmail1"
+                               aria-describedby="emailHelp"
+                               placeholder="Enter email">
+
+                    </div>
+                </div>
+
+                <div class="row">
+
+                    <div class="col-md-6  col-md-push-3  col-xs-12">
+
+                        <label for="content">content</label>
+                        <textarea required class="form-control" id="content" rows="3" name="content"
+                                  placeholder="Enter content"></textarea>
+                    </div>
+                </div>
+
+                <div class="row">
+
+                    <div class="col-md-6  col-md-push-3  col-xs-12">
+
+                        <label class="form-check-label">
+                            <input checked type="checkbox" class="form-check-input">
+                            get notifications
+                        </label>
+                    </div>
+                </div>
+
+                <div class="row">
+
+                    <div class="col-md-6  col-md-push-3  col-xs-12">
+                        <button type="submit" class="btn btn-primary">Submit</button>
+
+                    </div>
+                </div>
+            </div>
+
 
         </div>
 
-        <div class="form-group">
-            <label for="exampleInputEmail1">Email address</label>
-            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter name">
 
-        </div>
-        <div class="form-group">
-            <label for="content">content</label>
-            <textarea  class="form-control" id="content" rows="3" name="content" placeholder="Enter content"></textarea>
-
-        </div>
-        <div class="form-check">
-            <label class="form-check-label">
-                <input checked type="checkbox" class="form-check-input">
-               get notifications
-            </label>
-        </div>
-
-
-
-        <button type="submit" class="btn btn-primary">Submit</button>
     </form>
 
 </div>
