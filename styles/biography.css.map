@@ -1,7 +1,7 @@
 {
 "version": 3,
-"mappings": "",
-"sources": [],
+"mappings": "AAAA,uBAAuB;EACrB,WAAW,EAAE,IAAI",
+"sources": ["biography.scss"],
 "names": [],
 "file": "biography.css"
 }

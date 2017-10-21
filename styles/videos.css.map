@@ -1,6 +1,6 @@
 {
 "version": 3,
-"mappings": "AACE,wBAAI;EACF,OAAO,EAAE,IAAI",
+"mappings": "AACE,wBAAI;EACF,OAAO,EAAE,IAAI;EAEb,UAAU,EAAC,qBAAqB",
 "sources": ["videos.scss"],
 "names": [],
 "file": "videos.css"

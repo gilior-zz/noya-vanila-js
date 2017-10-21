@@ -121,6 +121,7 @@
 
         obj.getData('homeText', 'http://noyaschleien.com/api/Data/GetHomePageText', {"request": {"Language": "1"}}).then(function (data) {
             console.log(data.HomePageTexts[0]);
+            $('.spinner').hide();
             var domManager = Object.create(DomManager);
             domManager.addHtmlToElemet(data.HomePageTexts[0].Text,'home-text-place-holder')
 

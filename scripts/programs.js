@@ -16,6 +16,7 @@
     $(document).ready(function () {
         var api = Object.create(PUBLIC_API);
         api.getData('programs', 'http://noyaschleien.com/api/Data/GetPrograms', {"request": {"Language": "1"}}).then(function (data) {
+            $('.spinner').hide();
             console.log(data);
             for (var i = 0; i < data['Programs'].length; i++) {
                 var obj = data['Programs'][i];

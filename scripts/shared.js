@@ -2,6 +2,8 @@
     $(document).ready(function () {
         jQuery.get('mnu.html', function (html) {
             $('#mnu-place-holder').html(html)
+            if (document.title=='contact')
+                $('.spinner').hide();
         });
     })
 }())
@@ -48,7 +50,7 @@ var PUBLIC_API = {
         return me.loadData(url, body,method).then(function (data) {
             console.log(this);
             console.log(me);
-            me.updateCache(name, data);
+            // me.updateCache(name, data);
             return data;
         }).catch(function (err) {
             console.log(err);
@@ -61,6 +63,7 @@ var PUBLIC_API = {
 
 var DomManager = {
     addElementToDom: function (index, name, data, where, event, func) {
+        $('.spinner').css('visibility','hidden');
         var finalName = '<' + name + '/>'
         var finalWhere = '#' + where;
         var elem = $(finalName, data).appendTo(finalWhere);

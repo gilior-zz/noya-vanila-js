@@ -5,6 +5,9 @@
   background-size: cover;
   background-size: 100% 100%; }
 
+.spinner {
+  text-align: center; }
+
 .mnu-title {
   color: #cde9fc;
   font-size: 3vw !important; }

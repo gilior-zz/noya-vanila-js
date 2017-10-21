@@ -23,6 +23,7 @@
 
     $(document).ready(function () {
         api.getData('links', 'http://noyaschleien.com/api/Data/GetLinks', {"request": {"Language": '1'}}).then(function (data) {
+            $('.spinner').hide();
             for (var i = 0; i < data['Links'].length; i++) {
                 var obj = data['Links'][i];
                 processLink(obj);

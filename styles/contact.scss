@@ -1,13 +1,16 @@
 .contact-wrp {
- input:not([type='checkbox']) {
+  input:not([type='checkbox']) {
     height: 50px;
     font-size: 20px;
   }
-  textarea{
+  textarea {
     font-size: 20px;
   }
   form textarea {
     resize: none;
+  }
+  .row {
+    padding: 20px;
   }
 
   .row > div {
