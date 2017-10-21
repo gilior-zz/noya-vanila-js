@@ -2,7 +2,7 @@
     $(document).ready(function () {
         jQuery.get('mnu.html', function (html) {
             $('#mnu-place-holder').html(html)
-            if (document.title=='contact')
+            if (document.title == 'contact')
                 $('.spinner').hide();
         });
     })
@@ -19,9 +19,9 @@ var PUBLIC_API = {
         if (typeof item !== "undefined" && item !== null && item !== '')
             return JSON.parse(item);
     },
-    loadData: function (url, body,method) {
+    loadData: function (url, body, method) {
         if (typeof method === 'undefined')
-            method='POST';
+            method = 'POST';
         var data = JSON.stringify(body);
         var settings = {
             "async": true,
@@ -43,14 +43,16 @@ var PUBLIC_API = {
         }
         return $.ajax(settings)
     },
-    getData: function (name, url, body,method) {
+    getData: function (name, url, body, method) {
         var me = this;
-        var fromCache = this.getFromCache(name);
+        if (name !== '')
+            var fromCache = this.getFromCache(name);
         if (typeof fromCache !== "undefined" && typeof fromCache !== null) return Promise.resolve(fromCache);
-        return me.loadData(url, body,method).then(function (data) {
+        return me.loadData(url, body, method).then(function (data) {
             console.log(this);
             console.log(me);
-            // me.updateCache(name, data);
+            if (name !== '')
+                me.updateCache(name, data);
             return data;
         }).catch(function (err) {
             console.log(err);
@@ -63,7 +65,7 @@ var PUBLIC_API = {
 
 var DomManager = {
     addElementToDom: function (index, name, data, where, event, func) {
-        $('.spinner').css('visibility','hidden');
+        $('.spinner').css('visibility', 'hidden');
         var finalName = '<' + name + '/>'
         var finalWhere = '#' + where;
         var elem = $(finalName, data).appendTo(finalWhere);
