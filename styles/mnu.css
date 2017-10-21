@@ -10,6 +10,7 @@
   font-size: 3vw !important; }
 
 .my-navbar {
+  box-shadow: none !important;
   background: transparent;
   border: 0; }
   .my-navbar li :hover {
