@@ -1,0 +1,19 @@
+.contact-wrp input:not([type='checkbox']) {
+  height: 50px;
+  font-size: 20px; }
+.contact-wrp textarea {
+  font-size: 20px; }
+.contact-wrp form textarea {
+  resize: none; }
+.contact-wrp .row {
+  padding: 20px; }
+.contact-wrp .row > div {
+  background: darkorange;
+  text-shadow: 2px 2px 4px #000000;
+  color: white; }
+.contact-wrp .box {
+  padding: 20px;
+  box-shadow: rgba(0, 0, 0, 0.75) 6px 22px 31px 0px;
+  background-color: #e7a61a; }
+
+/*# sourceMappingURL=contact.css.map */

@@ -1,4 +1,4 @@
-.mnu-wrp{
+.mnu-wrp {
   margin-bottom: 50px;
   height: 100vh;
 
@@ -7,22 +7,22 @@
   background-size: 100% 100%;
   //border: solid;
 }
-.spinner{
+
+.spinner {
   text-align: center;
 }
 
-.mnu-title{
+.mnu-title {
   color: #cde9fc;
-  font-size: 3vw!important;
+  font-size: 3vw !important;
 }
 
-
 .my-navbar {
-box-shadow: none !important;
-;
+  box-shadow: none !important;;
 
-background: transparent;
+  background: transparent;
   border: 0;
+
   li :hover {
     background-color: transparent !important;
     /* /*transform: scale(1.5);
@@ -30,40 +30,43 @@ background: transparent;
         transition: text-decoration 0.5s;*/
   }
 
-  li:before {
-    content: '';
-    display: block;
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    height: 3px;
-    width: 0;
-    transition: width 0s ease, background .5s ease;
+  @media screen and (min-width: 768px)  {
+    li:before {
+      content: '';
+      display: block;
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      height: 3px;
+      width: 0;
+      transition: width 0s ease, background .5s ease;
+    }
+
+    li:after {
+      content: '';
+      display: block;
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      height: 3px;
+      width: 0;
+      background: white;
+      transition: width .5s ease;
+    }
+
+    li:hover:before {
+      width: 100%;
+      background: white;
+      transition: width .5s ease;
+    }
+
+    li:hover:after {
+      width: 100%;
+      background: transparent;
+      transition: all 0s ease;
+    }
   }
 
-  li:after {
-    content: '';
-    display: block;
-    position: absolute;
-    right: 0;
-    bottom: 0;
-    height: 3px;
-    width: 0;
-    background: white;
-    transition: width .5s ease;
-  }
-
-  li:hover:before {
-    width: 100%;
-    background: white;
-    transition: width .5s ease;
-  }
-
-  li:hover:after {
-    width: 100%;
-    background: transparent;
-    transition: all 0s ease;
-  }
 }
 
 .menu-font {
@@ -75,11 +78,9 @@ background: transparent;
   }
 }
 
-
 .icon-bar {
   background-color: white !important;
 }
-
 
 .navbar-toggle {
   border: none;
