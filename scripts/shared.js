@@ -11,8 +11,8 @@
             for (var i = 0; i < res.length; i++) {
                 var obj = res[i];
                 obj = obj.replace(/{{|}}/g, '');
-                var str = $('#mnu-place-holder').html().replace('{{'+obj+'}}', trans[obj]);
-                $('#mnu-place-holder').html(str);
+                var str = $('body').html().replace('{{'+obj+'}}', trans[obj]);
+                $('body').replaceWith(str)
             }
 
             console.log(res)
