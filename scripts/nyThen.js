@@ -3,7 +3,7 @@ Promise.prototype.then = (function (oldThen) {
         /* your logic here;
         remember: both successHandler and rejectHandler can be non-functions */
         console.log('in new then');
-        $('.spinner').hide();
+
         return oldThen.call(this, _successHandler, _rejectHandler);
     }
 })(Promise.prototype.then);

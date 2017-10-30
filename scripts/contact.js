@@ -1,6 +1,6 @@
 $(document).ready(function () {
 
-    $('.spinner').hide();
+
     $("#form").submit(function (event) {
         event.preventDefault();
         var api = Object.create(PUBLIC_API);

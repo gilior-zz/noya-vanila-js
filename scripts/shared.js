@@ -2,8 +2,20 @@
     $(document).ready(function () {
         jQuery.get('mnu.html', function (html) {
             $('#mnu-place-holder').html(html)
-            if (document.title == 'contact')
-                $('.spinner').hide();
+            $('.spinner').hide();
+        });
+        jQuery.get('assets/trans.json', function (trans) {
+
+            var re = /{{[a-z]\w+}}/g;
+            var res = $('#mnu-place-holder').html().match(re);
+            for (var i = 0; i < res.length; i++) {
+                var obj = res[i];
+                obj = obj.replace(/{{|}}/g, '');
+                var str = $('#mnu-place-holder').html().replace('{{'+obj+'}}', trans[obj]);
+                $('#mnu-place-holder').html(str);
+            }
+
+            console.log(res)
         });
     })
 }())
@@ -65,7 +77,7 @@ var PUBLIC_API = {
 
 var DomManager = {
     addElementToDom: function (index, name, data, where, event, func) {
-        $('.spinner').css('visibility', 'hidden');
+
         var finalName = '<' + name + '/>'
         var finalWhere = '#' + where;
         var elem = $(finalName, data).appendTo(finalWhere);
@@ -79,5 +91,7 @@ var DomManager = {
         $(finalWhere).html(html);
     }
 }
+
+
 
 

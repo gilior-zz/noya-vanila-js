@@ -83,7 +83,7 @@
             'http://noyaschleien.com/api/Data/GetImages',
             {"request": {"CurrentImageID": "2", "Language": "0", "NextData": "2", "DataAmount": "0"}})
             .then(function (data) {
-                $('.spinner').hide();
+
                 var imgs = data.Images;
                 for (var i = 0; i < imgs.length; i++) {
                     var obj = imgs[i];
